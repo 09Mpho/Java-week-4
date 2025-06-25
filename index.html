@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width-device-width, initial-scale=1.0">
+<title>FNB App Academy Help JS WEEK 4</title>
+ <link ref="stylesheet"type="text/css"href="style.css">
+    </head>
+
+    <body> 
+        <h1>JavaScript Week 4</h1>
+        <!--lesson 1-->
+        <div class ="lesson">
+            <h3>Lesson 1 : Show text on page</h3>
+
+            <h2 id="heading1">Hello</h2>
+            <p id="text1 ">World</p>
+            <button onclick="lesson1()">Change Text</button>
+            <script>
+                function lesson1 () {
+                    document.getElementById("heading1").innerHTML="This is JavaScript!";
+                    document.getElementById("text1").innerHTML="I am having Fun!";
+                    
+                }
+            </script>
+        </div>
+         <!-- lesson 2 -->
+                <div class="lesson">
+                    <h2>Lesson 2:Variables (Text Storage)</h2>
+                    <h2 id="heading2">Text will Change</h2>
+                    <p id="text2">More text here</p>
+                    <button onclick="lesson2()">Use Variables</button>
+
+                    <script>
+                        function lesson2() {
+                            var message1 ="Hello Everyone!";
+                            var message2 = "I love JavaScript! ";
+                            var message3="It's awesome!";
+
+                            document.getElementById("heading2").innerHTML= message1;
+                            document.getElementById("text2").innerHTML= message2 + message3 ;
+                            
+                        }
+                    </script>
+                    </div>
+               <!-- lesson 3 -->
+                <div class="lesson">
+                    <h3>Lesson3 : Variables (Numbers) </h3>
+                    <p id="Math">Maths equation will show up here</p>
+                    <button onclick="lesson3()">Do Math</button>
+
+                    <script>
+                        function lesson3() {
+                            var num1= 7;
+                            var num2= 10;
+                            document.getElementById("Math").innerHTML=num1 + "X" + num2 + "=" + (num1 * num2);
+                            
+                        }
+                    </script>
+                </div>
+                 <!-- lesson 4 -->
+                  <div class="lesson">
+                    <h3>Lesson 4: If/Else Decision (Conditionals)</h3>
+                    <input type="password"id="password"placeholder="Try:007">
+                    <button onclick="lesson4()">Check Password</button>
+                    <div class="result"id="result4">Enter password and click</div>
+                    <script>
+                        function lesson4() {
+                            
+                        var userPassword = document.getElementById("password"). value;
+
+                        if(userPassword=="007"){
+                            document.getElementById("result4").innerHTML="Correct password.You are logged in!"
+                        } else{
+                            document.getElementById("result4").innerHTML="wrong password! Please try again.";
+                        }
+                    }
+                    </script>
+                  </div>
+                  <!-- lesson 5 -->
+                   <div class="lesson">
+                    <h3>Lesson 5 : Click events</h3>
+                    <h2 onclick="this.innerHTML='is awesome!'">JavaScript</h2>
+                    <p>Click on the Word "JavaScript" above.</p>
+                    
+                </div>
+                <!-- lesson 6 -->
+                 <div class="lesson">
+                    <h3>Lesson 6 :Toggle Funtions</h3>
+
+                    <h2 id="toggle" onclick="toggleText()">JavaScript</h2>
+
+                    <p>Click repeatedly to toggle!</p>
+                    <script>
+                        function toggleText() {
+                            var toggle=document.getElementById("toggle");
+                            if (toggle.innerHTML == "JavaScript") {
+                                toggle.innerHTML = "is awesome";
+                            } else {
+                                toggle.innerHTML="JavaScript"
+                            }
+                            
+                        }
+                    </script>
+                 </div>
+                  <!-- lesson 7 -->
+                   <div class ="lesson">
+                    <h2>Lesson 7: Function Parameters</h2>
+                    <p><strong>Concept</strong> : Passing data into Functions</p>
+
+                    <button onclick="addNumbers(10,7)">Add 10 + 7</button>
+                     <button onclick="addNumbers(25,18)">Add 25 + 18</button>
+                      <button onclick="addNumbers(1245,562)">Add 1245 + 562</button>
+
+                    
+                    <div class="output" id="addition7">Result will show here.</div>
+
+
+                    <script>
+                        function addNumbers(num1, num2) {
+                            document.getElementById("addition7").innerHTML = num1 + num2 
+                            
+                        }
+
+                    </script>
+                   </div>
+
+                   <div class ="lesson">
+                    <h2>Lesson 8 : Function Return</h2>
+                    <p><strong>Concept:</strong> Functions returning values to be used elsewhere.</p>
+                    <button onclick="runLesson8()">Calculate and Display Result </button>
+                    <div class="output" id="addition8">Result will show here.</div>
+
+                    <script>
+                    function runLesson8() {
+                        document.getElementById("addition8").innerHTML="10 + 7 =" +addNumbersReturn(10, 7);
+                        
+                    }
+                            
+                        function addNumbersReturn(num1 , num2) {
+                            return num1 + num2;
+                        }
+                    </script>
+                   </div>
+
+                   <!-- lesson 9 -->
+                    <div class ="lesson">
+                        <h2>Lesson 9 : Variables Scopes</h2>
+                        <p><strong>Concept</strong>  Understaing where variables can be used.</p>
+
+                        <button onclick="demonstrateScope()">Demonstrate Variable Scope</button>
+                        <div class="output" id="scopeOutput">Click Button to see variable scopr in action</div>
+
+                        <script>
+                            var globalVariable = "I'm a global variable";
+                            function demonstrateScope() {
+                                var localvariable = " I 'm a global variable";
+                                document.getElementById("scopeOutput").innerHTML = "Global : " + globalVariable + "<br>" +
+                                "Local :" + localvariable +"br" +
+                                "Local variables only exist inside their functions!";
+
+                                
+                            }
+
+                            function demonstrateScope() {
+                                document.getElementById("scopeOutput").innerHTML= localvariable
+                            }
+
+
+
+
+                        </script>
+                    </div>
+                
+                
+    </body>
+</html>
